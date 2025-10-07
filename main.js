@@ -158,6 +158,7 @@ const init = () => {
   initActiveNav()
   initCopyEmail()
   initAnimations()
+  initScrollToTop()
 
   const textToType = 'Full-Stack Developer & Problem Solver'
   typeText('typedText', textToType, 80)
@@ -173,3 +174,22 @@ if (document.readyState === 'loading') {
 }
 
 
+const initScrollToTop = () => {
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+    window.addEventListener('scroll', () => {
+        // Zeigt den Button, sobald 500px gescrollt wurde
+        if (window.scrollY > 500) {
+            scrollToTopBtn.classList.add('show');
+        } else {
+            scrollToTopBtn.classList.remove('show');
+        }
+    });
+
+    scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+};
