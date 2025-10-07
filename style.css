@@ -930,11 +930,12 @@ section {
   border-radius: 50%;
   font-size: 1.2rem;
   cursor: pointer;
-  opacity: 0; /* Standardmäßig verstecken */
-  visibility: hidden;
+  opacity: 1; /* Standardmäßig sichtbar */
   transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
   z-index: 1000;
   transform: translateY(10px);
+  visibility: visible !important;
+  transform: translateY(0) !important;
 }
 
 .scroll-to-top.show {
