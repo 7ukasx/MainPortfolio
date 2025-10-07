@@ -969,3 +969,7 @@ section {
 [data-theme="light"] #scrollTopBtn {
   filter: invert(1); /* Hier invertieren wir es nicht, da es schon dunkel ist */
 }
+
+[data-theme="light"] .image-placeholder {
+  filter: invert(1); /* Hier invertieren wir es nicht, da es schon dunkel ist */
+}
