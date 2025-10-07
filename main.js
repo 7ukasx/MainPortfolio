@@ -149,25 +149,37 @@ const initCopyEmail = () => {
   })
 }
 
-const initScrollToTop = () => {
-    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
-
-    window.addEventListener('scroll', () => {
-        // Zeigt den Button, sobald 500px gescrollt wurde
-        if (window.scrollY > 500) {
-            scrollToTopBtn.classList.add('show');
+document.addEventListener("DOMContentLoaded", function() {
+    const scrollButton = document.getElementById("scrollTopBtn");
+    
+    // Funktion, die den Button ein- oder ausblendet
+    function toggleScrollButton() {
+        // Der Button erscheint, sobald 300px gescrollt wurde
+        if (window.scrollY > 300) {
+            scrollButton.classList.add("show");
         } else {
-            scrollToTopBtn.classList.remove('show');
+            scrollButton.classList.remove("show");
         }
-    });
+    }
 
-    scrollToTopBtn.addEventListener('click', () => {
+    // Event-Listener für das Scrollen
+    window.addEventListener("scroll", toggleScrollButton);
+    
+    // Event-Listener für den Klick auf den Button
+    scrollButton.addEventListener("click", function(e) {
+        e.preventDefault(); // Verhindert das "Springen"
+        
+        // Sanfter Scroll-Effekt zum Anfang der Seite
         window.scrollTo({
             top: 0,
-            behavior: 'smooth'
+            behavior: "smooth"
         });
     });
-};
+
+    // Führt die Funktion einmal aus, falls die Seite nicht ganz oben geladen wird
+    toggleScrollButton();
+});
+
 
 // === INIT ALL ===
 const init = () => {
@@ -178,7 +190,6 @@ const init = () => {
   initActiveNav()
   initCopyEmail()
   initAnimations()
-  initScrollToTop()
 
   const textToType = 'Full-Stack Developer & Problem Solver'
   typeText('typedText', textToType, 80)
