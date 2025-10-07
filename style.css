@@ -41,6 +41,7 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   transition: var(--transition);
+  touch-action: manipulation;
 }
 
 body.menu-open {
@@ -916,3 +917,28 @@ section {
 /* [data-theme="light"] .le-logo-img {
   filter: invert(1);
 } */
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--accent);
+  color: var(--bg-primary); /* Dunkle Schrift auf hellem Akzent */
+  border: none;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  opacity: 0; /* Standardmäßig verstecken */
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+  z-index: 1000;
+  transform: translateY(10px);
+}
+
+.scroll-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
