@@ -918,28 +918,54 @@ section {
   filter: invert(1);
 } */
 
-.scroll-to-top {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 50px;
-  height: 50px;
-  background-color: var(--accent);
-  color: var(--bg-primary); /* Dunkle Schrift auf hellem Akzent */
-  border: none;
-  border-radius: 50%;
-  font-size: 1.2rem;
-  cursor: pointer;
-  opacity: 1; /* Standardmäßig sichtbar */
-  transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
-  z-index: 1000;
-  transform: translateY(10px);
-  visibility: visible !important;
-  transform: translateY(0) !important;
+#scrollTopBtn {
+    /* Position fixiert unten rechts */
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 1000; /* Stellt sicher, dass er über anderen Elementen liegt */
+
+    /* NEUES DESIGN: Heller Button mit dunklem Icon */
+    width: 45px;
+    height: 45px;
+    background-color: #ffffff; /* Weißer Hintergrund */
+    color: #1a1a1a; /* Sehr dunkles Grau für das Icon */
+    border-radius: 50%; /* Macht den Button kreisrund */
+    border: 1px solid #e0e0e0; /* Dezenter Rand, falls Hintergrund auch sehr hell ist */
+    
+    /* Zentrierung des Icons */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none; /* Entfernt die Standard-Unterstreichung */
+    
+    /* Anfangszustand: unsichtbar und etwas außerhalb des Blickfelds */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+
+    /* Sanfte Übergänge für Animationen */
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, background-color 0.2s ease, border-color 0.2s ease;
 }
 
-.scroll-to-top.show {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
+/* Zustand, wenn der Button sichtbar sein soll */
+#scrollTopBtn.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Hover-Effekt: Der Button wird leicht abgedunkelt */
+#scrollTopBtn:hover {
+    background-color: #f0f0f0; /* Leicht grauer Hintergrund beim Hover */
+    border-color: #cccccc; /* Rand wird dunkler */
+}
+
+/* Styling des Font Awesome Icons */
+#scrollTopBtn i {
+    font-size: 1.2rem;
+}
+
+[data-theme="light"] #scrollTopBtn {
+  filter: invert(1); /* Hier invertieren wir es nicht, da es schon dunkel ist */
 }
