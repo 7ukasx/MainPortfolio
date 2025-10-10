@@ -974,17 +974,14 @@ section {
   filter: invert(1); /* Hier invertieren wir es nicht, da es schon dunkel ist */
 }
 
-/* Styling für den CV-Download-Button */
+/* Custom Styles für den CV-Download-Button */
 .contact-download {
-  /* Fügt Abstand nach oben zur E-Mail-Sektion hinzu */
   margin-top: 2rem; 
-  /* Zentriert den Button im Container */
   text-align: center; 
 }
 
-/* Stellt sicher, dass der Download-Button denselben Stil wie die Haupt-CTAs hat */
-.download-btn {
-  /* Erbt alle Stile von .cta-btn, falls du diese Klasse in deinem CSS hast */
+.cv-download-btn {
+  /* Layout & Größe */
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -993,16 +990,18 @@ section {
   font-weight: 600;
   text-decoration: none;
   border-radius: 6px;
-  background-color: var(--accent); /* Deine Akzentfarbe */
+
+  /* Farben (nutzt Theme-Variablen) */
+  background-color: var(--accent);
   color: var(--bg-primary); 
-  transition: var(--transition);
   border: 2px solid var(--accent);
+
+  /* Animation */
+  transition: var(--transition);
+  cursor: pointer;
 }
 
-.download-btn:hover {
+.cv-download-btn:hover {
   background-color: transparent;
   color: var(--accent); 
 }
-
-
-
