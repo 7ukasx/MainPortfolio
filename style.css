@@ -1003,3 +1003,35 @@ section {
   background-color: transparent;
   color: var(--accent); 
 }
+
+/* 1. Container-Styling für Zentrierung und Abstand */
+.contact-download {
+  margin-top: 2rem; 
+  text-align: center; 
+}
+
+/* 2. Styling für den Button selbst (BASIS CTA) */
+.cta-btn { /* Stelle sicher, dass diese Klasse existiert, da sie von download-btn geerbt wird */
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 6px;
+  background-color: var(--accent);
+  color: var(--bg-primary); 
+  transition: var(--transition);
+  border: 2px solid var(--accent);
+}
+
+.cta-btn:hover {
+  background-color: transparent;
+  color: var(--accent); 
+}
+
+/* 3. Optional: Wenn der Button eine spezifische Klasse hat */
+.download-btn {
+  /* Füge hier spezifische Anpassungen hinzu, falls nötig, aber er sollte jetzt schon gestylt sein */
+}
